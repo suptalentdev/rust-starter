@@ -59,7 +59,7 @@ pub fn start() -> Result<()> {
 
     // Setup default Settings
     {
-        let mut w = SETTINGS.write()?;
+        let mut w = SETTINGS.write().unwrap();
         *w = AppConfig::new(cli_matches.value_of("config"))?;
     }
 
